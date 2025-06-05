@@ -9,7 +9,7 @@
 
 #include<stdio.h>
 
-int CountTwo(int iNo)
+int Count(int iNo)
 {
     int iDigit = 0;
     int iCount = 0;
@@ -38,7 +38,7 @@ int main()
     scanf("%d",&iValue);
 
     int bRet = 0;
-    bRet = CountTwo(iValue);
+    bRet = Count(iValue);
 
     printf("frequency of number less than 6 is %d \n",bRet);
 
