@@ -9,7 +9,7 @@
 
 #include<stdio.h>
 
-int CountTwo(int iNo)
+int CountFour(int iNo)
 {
     int iDigit = 0;
     int iCount = 0;
@@ -38,7 +38,7 @@ int main()
     scanf("%d",&iValue);
 
     int bRet = 0;
-    bRet = CountTwo(iValue);
+    bRet = CountFour(iValue);
 
     printf("frequency of 4 is %d \n",bRet);
 
