@@ -1,0 +1,72 @@
+/////////////////////////////////////////////////////////////////// 
+//
+// File name : program4.c
+// Description : Return largest elements in linked list
+// Author : Adinath Santosh Pawar
+// Date : 28/6/25
+// 
+///////////////////////////////////////////////////////////////////
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<stdbool.h>
+
+struct node
+{
+    int data;
+    struct node *next;
+};
+typedef struct node NODE;
+typedef struct node* PNODE;
+typedef struct node** PPNODE;
+
+void Insertfirst(PPNODE head, int no)
+{
+    PNODE newn = NULL;
+    newn = (PNODE)malloc(sizeof(NODE));
+    newn->next = NULL;
+    newn->data = no;
+
+    if (*head == NULL)
+    {
+        *head = newn;
+    }
+
+    else
+    {
+        newn -> next = *head;
+        *head = newn;
+    }
+}
+
+int Maximum(PNODE head)
+{
+    PNODE temp = head;
+    int iMax = 0;
+
+    while(temp != NULL)
+    {
+        if(temp->data > iMax)
+        {
+            iMax = temp->data;
+        }
+        temp = temp->next;
+    }
+    return iMax;
+}
+
+int main()
+{
+    PNODE first = NULL;
+    int iRet = 0;
+
+    Insertfirst(&first, 101);
+    Insertfirst(&first, 51);
+    Insertfirst(&first, 21);
+    Insertfirst(&first, 11);
+
+    iRet = Maximum(first);
+    printf("Maximum is %d \n",iRet);
+
+    return 0;
+}
